@@ -1,29 +1,29 @@
-import fetch from "isomorphic-unfetch";
-import { Config } from "./types";
+interface Config {
+	apiKey: string;
+	baseUrl?: string;
+	endpoint: string;
+}
 
-export abstract class Base {
+export class AIClient {
 	private apiKey: string;
 	private baseUrl: string;
-
+	private endpoint: string;
 	constructor(config: Config) {
 		this.apiKey = config.apiKey;
 		this.baseUrl = config.baseUrl || "";
+		this.endpoint = config.endpoint;
 	}
-
-	protected async request<T>(
-		endpoint: string,
-		options?: RequestInit
-	): Promise<T> {
-		const url = `${this.baseUrl}${endpoint}`;
+	async invoke<T>(payload: T) {
+		const url = `${this.baseUrl}${this.endpoint}`;
 		const headers = {
 			"Content-Type": "application/json",
 			"api-key": this.apiKey,
 		};
-		const config = {
-			...options,
+		const config: RequestInit = {
+			method: "POST",
+			body: JSON.stringify(payload),
 			headers,
 		};
-
 		return fetch(url, config).then((response) => {
 			if (response.ok) {
 				return response.json();
