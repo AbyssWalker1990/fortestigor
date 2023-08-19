@@ -1,19 +1,29 @@
 {
-  "name": "abnk-assistant-client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.ts"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^20.5.0",
-    "microbundle": "^0.15.1"
-  },
-  "dependencies": {
-    "isomorphic-unfetch": "^4.0.2"
-  }
+	"name": "abnk-assistant-client",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"module": "dist/index.m.js",
+	"unpkg": "dist/index.umd.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		"import": "./dist/index.m.js",
+		"require": "./dist/index.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"start": "node ./index.ts",
+		"build": "rm -rfv ./dist && microbundle --tsconfig tsconfig.json --no-sourcemap"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"microbundle": "^0.15.1",
+		"nodemon": "^3.0.1"
+	},
+	"dependencies": {
+		"isomorphic-unfetch": "^4.0.2"
+	}
 }
