@@ -4,19 +4,39 @@ The ABNK Assistant Node.js Client is a library that provides a simple way to int
 
 ## Installation
 
-You will can install the ABNK Assistant Node.js Client using npm:
+For now this **package is local** only, so you need to make **some preparing steps** to use it:
+
+**1. Clone**
+Clone this package from repository to your local directory
 
 ```
-npm install abnk-assistant-client
+git clone https://your_username@bitbucket.org/abnk/abnk-assistant-nodejs-client.git
 ```
-but for now this package is local only, so you need to provide absolute or relative path to it. The cli command will look like this:
+
+**2. Build**
+Move inside the cloned directory (ex. _/abnk-assistant-client_ ) and build the package using next **npm** command:
+
 ```
-npm install --save path/to/abnk-assistant-client
+npm run build
 ```
+
+**3. Install**
+Move in the directory of your own project and install the package to your project using one of the following **npm** commands:
+
+```
+npm install path/to/abnk-assistant-client
+```
+
 or
+
 ```
 npm link --save path/to/abnk-assistant-client
 ```
+
+> _In the future it will be much more simple and you will can install the ABNK Assistant Client using npm_:
+> ```
+> npm install abnk-assistant-client
+> ```
 
 ## Usage
 
