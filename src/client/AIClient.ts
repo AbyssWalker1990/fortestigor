@@ -1,15 +1,11 @@
 import * as http from 'http'
-
-interface Config {
-    url: string
-    method: 'GET' | 'POST'
-}
+import { AIClientConfig } from 'src/types/AIClientType'
 
 export class AIClient {
     private url: URL
     private method: 'GET' | 'POST'
 
-    constructor(config: Config) {
+    constructor(config: AIClientConfig) {
         this.url = new URL(config.url.includes('http://') ? config.url : 'http://' + config.url)
         this.method = config.method
     }

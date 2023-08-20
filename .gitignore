@@ -48,5 +48,5 @@ Thumbs.db
 *.mov
 *.wmv
 
-# package-lock
-./package-lock.json
+# package manager lock files (at the repository root)
+/package-lock.json
