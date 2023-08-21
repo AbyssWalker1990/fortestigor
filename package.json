@@ -18,12 +18,17 @@
         "build": "rm -rfv ./dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
         "lint": "eslint src/**/*.ts",
         "format": "eslint src/**/*.ts --fix",
-        "pretty": "prettier --write \"src/**/*.ts\""
+        "pretty": "prettier --write \"src/**/*.ts\"",
+        "test": "jest"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "microbundle": "^0.15.1"
+        "@jest/globals": "^29.6.3",
+        "@types/jest": "^29.5.3",
+        "jest": "^29.6.3",
+        "microbundle": "^0.15.1",
+        "ts-jest": "^29.1.1"
     },
     "husky": {
         "hooks": {
