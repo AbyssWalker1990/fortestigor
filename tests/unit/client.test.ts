@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals'
 import { AIClient } from '../../src/client/AIClient'
 import { HttpRequestService } from '../../src/client/HttpRequestService'
-import { UrlsService } from '../../src/client/UrlService'
+import { UrlService } from '../../src/client/UrlService'
 import returnValue from './utils/mockReturnValue'
 import resolve from './utils/mockResolvedValue'
 import mockImplementation from './utils/mockImplementation'
@@ -10,7 +10,7 @@ describe('AIClient', () => {
   const initialUrl = 'http://localhost:3001'
   const initialMethod = 'POST'
 
-  const urlService = new UrlsService()
+  const urlService = new UrlService()
   const httpRequestService = new HttpRequestService()
   const client = new AIClient({
     url: initialUrl,

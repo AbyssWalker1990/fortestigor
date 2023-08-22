@@ -1,13 +1,13 @@
 import * as http from 'http'
 import { AIClientConfig } from 'src/types/AIClientType'
-import { UrlsService } from './UrlService'
+import { UrlService } from './UrlService'
 import { HttpRequestService } from './HttpRequestService'
 
 export class AIClient {
     config: AIClientConfig
 
     constructor(config: AIClientConfig,
-        private readonly urlService = new UrlsService(),
+        private readonly urlService = new UrlService(),
         private readonly httpRequestService = new HttpRequestService()) {
         this.config = config
     }
